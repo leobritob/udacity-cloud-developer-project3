@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: leonardobrito98/simple-reverse-proxy:latest
+  backend_user:
+    build:
+      context: ../../udagram-api-user
+    image: leonardobrito98/restapi-user:latest
+  backend_feed:
+    build:
+      context: ../../udagram-api-feed
+    image: leonardobrito98/restapi-feed:latest
+  frontend:
+    build:
+      context: ../../udagram-frontend
+    image: leonardobrito98/frontend:latest
